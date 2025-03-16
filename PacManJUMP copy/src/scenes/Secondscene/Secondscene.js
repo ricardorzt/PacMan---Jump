@@ -31,7 +31,7 @@ export default class Secondscene extends Phaser.Scene {
     preload() {      
         const selectedCharacter = localStorage.getItem("selectedCharacter");
 
-        // Definir la ruta de la imagen según el personaje seleccionado
+        // Definir la ruta de la imagen según el personaje 
         let characterImagePath = 'assets/';
 
         // Dependiendo del personaje seleccionado, asignar el path adecuado
@@ -43,7 +43,7 @@ export default class Secondscene extends Phaser.Scene {
             characterImagePath += 'pacman-full.png'; // Por defecto si no se encuentra la selección
         }
 
-        // Cargar el sprite adecuado usando la ruta dinámica
+        // Cargar el sprite usando la ruta dinámica
         this.load.spritesheet('pacman', characterImagePath, { frameWidth: 48, frameHeight: 48 });
 
         this.load.spritesheet('ghost-scared', '../assets/ghost-scared-sprite.png', {
@@ -64,7 +64,7 @@ export default class Secondscene extends Phaser.Scene {
         this.load.image('pellet', '../assets/pixel-fruit-apple.png');
         this.load.image('enemy-pellet', '../assets/enemy-pellet.png');
 
-        // Cargar otros elementos del HUD
+        // Cargar otros elementos 
         //this.load.image('overlay', 'assets/overlay.png');
         this.load.image('gameover', '../assets/game-over.jpg');
 
@@ -135,7 +135,7 @@ export default class Secondscene extends Phaser.Scene {
 
         // Crear solo las vidas que quedan
         for (let i = 0; i < this.lives; i++) {
-            // Aquí, 870, 900, 930 son las posiciones en x, ajusta la distancia entre las vidas
+            
             let vida = this.add.image(870 + (i * 30), 55, 'livesIcon');
             this.displayLives.push(vida);  // Agrega cada vida a la lista
         }
