@@ -58,7 +58,7 @@ export default class GameoverScene extends Phaser.Scene {
             document.getElementById("container").style.display = "block";
 
             //this.scene.start("Firstscene");
-            window.location.href = "../indexMenus.html";
+            window.location.href = "../index.html";
 
             this.scene.stop();
         });
