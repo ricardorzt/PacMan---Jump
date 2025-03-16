@@ -200,7 +200,7 @@ class Firstscene extends Phaser.Scene {
         
 
         this.loopSound.play(); // Cuando termine el sonido de inicio, iniciar la música de fondo
-        this.win();
+    
     }
 
 
