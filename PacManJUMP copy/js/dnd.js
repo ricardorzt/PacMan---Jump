@@ -1,38 +1,34 @@
 let draggedImageId = null;
 
-// Function to allow the dragover
+// Función para permitir el dragover
 function allowDrop(event) {
     event.preventDefault();
 }
 
-// Function to handle the drop of the image
 function drop(event) {
     event.preventDefault();
     
-    // Get the id of the dragged image
+    // Obtener id de la imagen
     const data = event.dataTransfer.getData("text");
     const draggedImage = document.getElementById(data);
 
-    // Store the id in the global variable
+    // Guarda el id en la variable global 
     draggedImageId = draggedImage.id;
 
-    // Place the image inside the drop zone
     const dropZone = document.querySelector('.drop-zone');
 
-    // Create a new image inside the drop zone
+    // Crea una nueva imagen en la zona de drop
     const img = document.createElement('img');
     img.id = 'draggedImage';
     img.src = draggedImage.src;
     
-    // Add the image to the drop area and hide the text
-    dropZone.innerHTML = '';  // Remove the text
-    dropZone.appendChild(img);  // Add the image
+    dropZone.innerHTML = '';  
+    dropZone.appendChild(img);
 
-    // Hide the text and display the image
     document.querySelector('.drop-zone p').style.display = 'none';
 }
 
-// Function to drag the image
+
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
 }
@@ -48,33 +44,32 @@ function closeAlert() {
     document.getElementById("alerta").style.display = "none";
 }
 
-// Function to select the character after dragging it
+// funcion para seleccionar el personaje
 function selectPlayer() {
     if (!draggedImageId) {
         showAlert("You must select a character!");
         return;
     }
 
-    // Save the selected character in localStorage
+    // guarda el personaje en localStorage
     localStorage.setItem("selectedCharacter", draggedImageId);
 
-    // Hide the character selection area
     document.getElementById("dragDropArea").style.display = "none";
 
     window.location.href = "../indexJuego.html"; 
 }
 
-// Function to go back to the menu
+// regresar al menu
 function goBackToMenu() {
-    document.getElementById("dragDropArea").style.display = "none"; // Hide character selection area
-    document.getElementById("menu").style.display = "flex"; // Show the menu
+    document.getElementById("dragDropArea").style.display = "none"; 
+    document.getElementById("menu").style.display = "flex";
     const canvas = document.getElementById("gameCanvas");
     canvas.style.display = "block"; 
 
-    // Clear the player name text field
+     // Limpiar el campo de texto del nombre del jugador
     document.getElementById("playerName").value = ""; 
 
-    // Clear the selection of the select (if any is selected)
+     // Restablecer la selección de jugadores registrados (si hay alguno seleccionado)
     const existingNames = document.getElementById("existingNames");
     existingNames.value = "Select an already registered player"; // Reset the existing player selection
 }
