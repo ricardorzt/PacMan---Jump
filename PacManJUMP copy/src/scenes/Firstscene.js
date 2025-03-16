@@ -305,6 +305,7 @@ class Firstscene extends Phaser.Scene {
 
     collectSpecial(player, special){
             special.disableBody(true, true);
+            this.isSpecial=false;
             this.eatSound.play();
             this.score+=30;
     }
