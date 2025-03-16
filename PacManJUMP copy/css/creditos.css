@@ -16,7 +16,7 @@
     z-index: 1000;
 }
 #gameCanvas {
-    position: absolute; /* Asegura que el canvas no se mueva inesperadamente */
+    position: absolute; 
     top: 0;
     left: 0;
     width: 100%;
