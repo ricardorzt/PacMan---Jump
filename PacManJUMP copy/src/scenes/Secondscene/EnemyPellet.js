@@ -51,8 +51,10 @@ export default class EnemyPellet extends Phaser.Physics.Arcade.Sprite {
                 secondScene.scoreText.setText("Score: " + secondScene.score);
                  
                 secondScene.timerText.setText("Time: " + secondScene.timer);
-                secondScene.displayLives[secondScene.lives].destroy();
-            } else {
+                if (secondScene.lives >= 0 && secondScene.lives < secondScene.displayLives.length) {
+                    secondScene.displayLives[secondScene.lives].destroy();  // Asegúrate de que el índice sea válido
+                }
+                } else {
                 secondScene.lives--;
 
                 if(secondScene.score >= 20){
@@ -69,7 +71,9 @@ export default class EnemyPellet extends Phaser.Physics.Arcade.Sprite {
                 
                 secondScene.timerText.setText("Time: " + secondScene.timer);
                 secondScene.scoreText.setText("Score: " + secondScene.score);
-                secondScene.displayLives[secondScene.lives].destroy();
+                if (secondScene.lives >= 0 && secondScene.lives < secondScene.displayLives.length) {
+                    secondScene.displayLives[secondScene.lives].destroy();  // Asegúrate de que el índice sea válido
+                }
                 secondScene.gameOver();
             }
         }
