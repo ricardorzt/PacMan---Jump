@@ -3,10 +3,10 @@ import Player from "./Player.js";
 
 export default class Ghost extends Phaser.Physics.Arcade.Sprite {
     constructor(scene, track) {
-        // Lista de colores de fantasmas disponibles
+        // Lista de fantasmas
         const ghostColors = ['ghost-red', 'ghost-cyan', 'ghost-pink', 'ghost-yellow'];
         const randomGhost = Phaser.Math.RND.pick(ghostColors); // Selecciona un color al azar
-        const x = 15; // Posición inicial aleatoria dentro del rango de la pista
+        const x = 15; // Posición aleatoria de la pista
 
         super(scene, x, track.y, randomGhost); 
 
