@@ -11,7 +11,6 @@ export default class Track {
         this.cherry = scene.physics.add.image(1024, trackY - 10, 'cherry').setOrigin(1, 1);
    
 
-        // ✅ Grupos de proyectiles
         this.playerProjectiles = scene.physics.add.group({
             frameQuantity: 8,
             key: 'sprites',
