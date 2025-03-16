@@ -3,7 +3,7 @@
 });
 */
 function showScore() {
-    // Ocultar el canvas y el menú, mostrar la sección de puntajes
+    // Ocultar el canvas y el menú
     canvas.style.display = "none";
     document.getElementById("scoreSection").style.display = "flex";
     document.getElementById("menu").style.display = "none";
@@ -47,7 +47,7 @@ function loadScores() {
         scoreCell.textContent = player.score;
         row.appendChild(scoreCell);
 
-        scoreTableBody.appendChild(row);  // Agregar la fila a la tabla
+        scoreTableBody.appendChild(row); 
     });
 }
 
