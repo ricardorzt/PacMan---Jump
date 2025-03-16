@@ -58,7 +58,7 @@ export default class WinScene extends Phaser.Scene {
             document.getElementById("container").style.display = "block";
 
 
-            window.location.href = "../indexMenus.html";
+            window.location.href = "../index.html";
             this.scene.stop();
     
         });
